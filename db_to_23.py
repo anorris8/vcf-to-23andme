@@ -10,6 +10,17 @@ cursor = conn.cursor()
 
 output_file = open(output_file_name, "w")
 
+genome_query = '''select
+	reference_base,
+	alternative_base,
+	data
+from
+	genome
+where
+	chromosome = ? and
+	position = ? and
+	identifier=?
+'''
 
 for i, line in enumerate(open(blank_file_name, "r")):
 	if i != 0:
@@ -28,25 +39,12 @@ for i, line in enumerate(open(blank_file_name, "r")):
 	except:
 		continue
 	
-	cursor.execute('''select
-	reference_base,
-	alternative_base,
-	data,
-	identifier
-from
-	genome
-where
-	chromosome = ? and
-	position = ? and
-	identifier=?
-''', (chromosome, int(position), identifier))
-	
+	cursor.execute(genome_query, (chromosome, int(position), identifier))
 	row = cursor.fetchone()
-	
 	if row is None:
 		output_file.write("\t--")
 		continue
-	reference_base, alternative_base, data, other_identifier = row
+	reference_base, alternative_base, data = row
 	
 	gt = data.split(":")[0].split("/")
 	genotype = (reference_base[0], alternative_base[0])[int(gt[0])]
