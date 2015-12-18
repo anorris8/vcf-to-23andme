@@ -19,7 +19,7 @@ from
 where
 	chromosome = ? and
 	position = ? and
-	identifier=?
+	identifier = ?
 '''
 
 for i, line in enumerate(open(blank_file_name, "r")):
