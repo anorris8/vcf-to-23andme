@@ -11,9 +11,7 @@ cursor = conn.cursor()
 output_file = open(output_file_name, "w")
 
 genome_query = '''select
-	reference_base,
-	alternative_base,
-	data
+	genotype
 from
 	genome
 where
@@ -44,14 +42,10 @@ for i, line in enumerate(open(blank_file_name, "r")):
 	if row is None:
 		output_file.write("\t--")
 		continue
-	reference_base, alternative_base, data = row
 	
-	gt = data.split(":")[0].split("/")
-	genotype = (reference_base[0], alternative_base[0])[int(gt[0])]
-	if chromosome != "X":
-		genotype += (reference_base[0], alternative_base[0])[int(gt[1])]
-	
-	output_file.write("\t" + genotype)
+	output_file.write("\t" + row[0])
 
 output_file.write("\r\n")
 output_file.close()
+
+conn.close()
