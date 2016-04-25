@@ -4,7 +4,7 @@ These scripts convert an imputed DNA.Land VCF into the 23andMe V3 raw data forma
 Firstly, data_to_db.py converts the VCF file and after any additional 23andMe raw data file (adds 23andMe indentifiers) into an indexed SQLite3 database for quick searching. db_to_23.py then inserts genotypes into the blank V3 file retrieved from the database by chromosome, position and identifier.
 
 ##Requirements
-* Python
+* Python3
 
 ##Usage
 ```
