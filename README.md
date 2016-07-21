@@ -8,14 +8,14 @@ Firstly, data_to_db.py converts the VCF file and any additional 23andMe raw data
 
 ##Usage
 ```
-python3 data_to_db.py <INPUT_VCF> vcf <OUTPUT_DB>
-python3 data_to_db.py <INPUT_23_RAW> 23andme <OUTPUT_DB>
-python3 db_to_23.py <INPUT_DB> <INPUT_BLANK_23_RAW> <OUTPUT_23_RAW>
+python data_to_db.py <INPUT_VCF> vcf <OUTPUT_DB>
+python data_to_db.py <INPUT_23_RAW> 23andme <OUTPUT_DB>
+python db_to_23.py <INPUT_DB> <INPUT_BLANK_23_RAW> <OUTPUT_23_RAW>
 ```
 
 ##Usage Example
 ```
-python3 data_to_db.py imputed.vcf vcf genome.db
-python3 data_to_db.py 23andme_v4_genome.txt 23andme genome.db
-python3 db_to_23.py genome.db blank_v3.txt genome_Fred_Bloggs_Full_20140628012345.txt
+python data_to_db.py imputed.vcf vcf genome.db
+python data_to_db.py 23andme_v4_genome.txt 23andme genome.db
+python db_to_23.py genome.db blank_v3.txt genome_Fred_Bloggs_Full_20140628012345.txt
 ```
