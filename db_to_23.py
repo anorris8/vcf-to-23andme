@@ -8,7 +8,7 @@ _, db_file_name, blank_file_name, output_file_name = argv
 conn = sqlite3.connect(db_file_name)
 cursor = conn.cursor()
 
-output_file = open(output_file_name, "w")
+output_file = open(output_file_name, "w", encoding="utf8")
 
 genome_query = '''select
 	genotype
@@ -20,7 +20,7 @@ where
 	identifier = ?
 '''
 
-for i, line in enumerate(open(blank_file_name, "r")):
+for i, line in enumerate(open(blank_file_name, "r", encoding="utf8")):
 	if i != 0:
 		output_file.write("\r\n")
 	if line == "":

@@ -32,10 +32,10 @@ on
 
 insert_statement = "insert or replace into genome values (?,?,?,?)"
 
-with open(data_file_name, "r") as data_file:
+with open(data_file_name, "r", encoding="utf8") as data_file:
 	reader = csv.reader(data_file, delimiter="\t", quoting=csv.QUOTE_NONE)
 	for i, line in enumerate(reader):
-		if line[0].startswith("#"):
+		if not line or line[0].startswith("#"):
 			continue
 		
 		if data_format == "vcf":
