@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2015-2016 Sean Hewitt <contact@SeanHewitt.com>
+# Licensed under the MIT license: http://SeanHewitt.com/MIT-LICENSE.txt
 
 import sys
 import csv
