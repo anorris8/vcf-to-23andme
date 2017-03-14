@@ -5,17 +5,17 @@ data_to_db.py is used to convert the VCF file and any additional 23andMe raw dat
 
 The data_to_db.py script accepts both compressed and uncompressed data files.
 
-##Requirements
+## Requirements
 * Python3
 
-##Usage
+## Usage
 ```
 python data_to_db.py <INPUT_VCF> vcf <OUTPUT_DB>
 python data_to_db.py <INPUT_23_RAW> 23andme <OUTPUT_DB>
 python db_to_23.py <INPUT_DB> <INPUT_BLANK_23_RAW> <OUTPUT_23_RAW>
 ```
 
-##Usage Example
+## Usage Example
 ```
 python data_to_db.py imputed.vcf.gz vcf genome.db
 python data_to_db.py genome_Fred_Bloggs_v4_Full_20160423012345.zip 23andme genome.db
